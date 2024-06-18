@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 /* eslint-disable */
+// @ts-nocheck
 "use strict";
 
 const RAW_RUNTIME_STATE =
@@ -8183,25 +8184,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["body-parser", [\
-      ["npm:1.20.1", {\
-        "packageLocation": "./.yarn/cache/body-parser-npm-1.20.1-759fd14db9-5f8d128022.zip/node_modules/body-parser/",\
-        "packageDependencies": [\
-          ["body-parser", "npm:1.20.1"],\
-          ["bytes", "npm:3.1.2"],\
-          ["content-type", "npm:1.0.5"],\
-          ["debug", "virtual:44738662cf800ff2863ba9baeabb817b24a959a14f86e20a31680e5dc79a4a738f7ceb7dca32753d579fae475aa061dffad8228a3391f3a9546b122f077e29a5#npm:2.6.9"],\
-          ["depd", "npm:2.0.0"],\
-          ["destroy", "npm:1.2.0"],\
-          ["http-errors", "npm:2.0.0"],\
-          ["iconv-lite", "npm:0.4.24"],\
-          ["on-finished", "npm:2.4.1"],\
-          ["qs", "npm:6.11.0"],\
-          ["raw-body", "npm:2.5.1"],\
-          ["type-is", "npm:1.6.18"],\
-          ["unpipe", "npm:1.0.0"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:1.20.2", {\
         "packageLocation": "./.yarn/cache/body-parser-npm-1.20.2-44738662cf-3cf171b821.zip/node_modules/body-parser/",\
         "packageDependencies": [\
@@ -9129,13 +9111,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/cookie-npm-0.4.2-7761894d5f-2e1de9fded.zip/node_modules/cookie/",\
         "packageDependencies": [\
           ["cookie", "npm:0.4.2"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
-      ["npm:0.5.0", {\
-        "packageLocation": "./.yarn/cache/cookie-npm-0.5.0-e2d58a161a-aae7911ddc.zip/node_modules/cookie/",\
-        "packageDependencies": [\
-          ["cookie", "npm:0.5.0"]\
         ],\
         "linkType": "HARD"\
       }],\
@@ -11520,44 +11495,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["express", [\
-      ["npm:4.18.2", {\
-        "packageLocation": "./.yarn/cache/express-npm-4.18.2-bb15ff679a-869ae89ed6.zip/node_modules/express/",\
-        "packageDependencies": [\
-          ["express", "npm:4.18.2"],\
-          ["accepts", "npm:1.3.8"],\
-          ["array-flatten", "npm:1.1.1"],\
-          ["body-parser", "npm:1.20.1"],\
-          ["content-disposition", "npm:0.5.4"],\
-          ["content-type", "npm:1.0.5"],\
-          ["cookie", "npm:0.5.0"],\
-          ["cookie-signature", "npm:1.0.6"],\
-          ["debug", "virtual:44738662cf800ff2863ba9baeabb817b24a959a14f86e20a31680e5dc79a4a738f7ceb7dca32753d579fae475aa061dffad8228a3391f3a9546b122f077e29a5#npm:2.6.9"],\
-          ["depd", "npm:2.0.0"],\
-          ["encodeurl", "npm:1.0.2"],\
-          ["escape-html", "npm:1.0.3"],\
-          ["etag", "npm:1.8.1"],\
-          ["finalhandler", "npm:1.2.0"],\
-          ["fresh", "npm:0.5.2"],\
-          ["http-errors", "npm:2.0.0"],\
-          ["merge-descriptors", "npm:1.0.1"],\
-          ["methods", "npm:1.1.2"],\
-          ["on-finished", "npm:2.4.1"],\
-          ["parseurl", "npm:1.3.3"],\
-          ["path-to-regexp", "npm:0.1.7"],\
-          ["proxy-addr", "npm:2.0.7"],\
-          ["qs", "npm:6.11.0"],\
-          ["range-parser", "npm:1.2.1"],\
-          ["safe-buffer", "npm:5.2.1"],\
-          ["send", "npm:0.18.0"],\
-          ["serve-static", "npm:1.15.0"],\
-          ["setprototypeof", "npm:1.2.0"],\
-          ["statuses", "npm:2.0.1"],\
-          ["type-is", "npm:1.6.18"],\
-          ["utils-merge", "npm:1.0.1"],\
-          ["vary", "npm:1.1.2"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:4.19.2", {\
         "packageLocation": "./.yarn/cache/express-npm-4.19.2-f81334a22a-3fcd792536.zip/node_modules/express/",\
         "packageDependencies": [\
@@ -18667,17 +18604,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["raw-body", [\
-      ["npm:2.5.1", {\
-        "packageLocation": "./.yarn/cache/raw-body-npm-2.5.1-9dd1d9fff9-280bedc12d.zip/node_modules/raw-body/",\
-        "packageDependencies": [\
-          ["raw-body", "npm:2.5.1"],\
-          ["bytes", "npm:3.1.2"],\
-          ["http-errors", "npm:2.0.0"],\
-          ["iconv-lite", "npm:0.4.24"],\
-          ["unpipe", "npm:1.0.0"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:2.5.2", {\
         "packageLocation": "./.yarn/cache/raw-body-npm-2.5.2-5cb9dfebc1-863b5171e1.zip/node_modules/raw-body/",\
         "packageDependencies": [\
@@ -22246,7 +22172,7 @@ const RAW_RUNTIME_STATE =
           ["compression", "npm:1.7.4"],\
           ["connect-history-api-fallback", "npm:2.0.0"],\
           ["default-gateway", "npm:6.0.3"],\
-          ["express", "npm:4.18.2"],\
+          ["express", "npm:4.19.2"],\
           ["graceful-fs", "npm:4.2.11"],\
           ["html-entities", "npm:2.4.0"],\
           ["http-proxy-middleware", "virtual:226c79af78132583ab00ef20a6f3651f9ee18297b5668cc06393ff6843f78b85b54417c92353f079db61e3c41d25bcec9e73f18fa93e864085891e78862a16fa#npm:2.0.6"],\
@@ -23410,10 +23336,9 @@ async function copyImpl(prelayout, postlayout, destinationFs, destination, sourc
         updated = await copySymlink(prelayout, postlayout, destinationFs, destination, destinationStat, sourceFs, source, sourceStat, opts);
       }
       break;
-    default:
-      {
-        throw new Error(`Unsupported file type (${sourceStat.mode})`);
-      }
+    default: {
+      throw new Error(`Unsupported file type (${sourceStat.mode})`);
+    }
   }
   if (opts.linkStrategy?.type !== `HardlinkFromIndex` || !sourceStat.isFile()) {
     if (updated || destinationStat?.mtime?.getTime() !== mtime.getTime() || destinationStat?.atime?.getTime() !== atime.getTime()) {
@@ -23476,7 +23401,10 @@ async function copyFolder(prelayout, postlayout, destinationFs, destination, des
 }
 async function copyFileViaIndex(prelayout, postlayout, destinationFs, destination, destinationStat, sourceFs, source, sourceStat, opts, linkStrategy) {
   const sourceHash = await sourceFs.checksumFilePromise(source, { algorithm: `sha1` });
-  const indexPath = destinationFs.pathUtils.join(linkStrategy.indexPath, sourceHash.slice(0, 2), `${sourceHash}.dat`);
+  const defaultMode = 420;
+  const sourceMode = sourceStat.mode & 511;
+  const indexFileName = `${sourceHash}${sourceMode !== defaultMode ? sourceMode.toString(8) : ``}`;
+  const indexPath = destinationFs.pathUtils.join(linkStrategy.indexPath, sourceHash.slice(0, 2), `${indexFileName}.dat`);
   let AtomicBehavior;
   ((AtomicBehavior2) => {
     AtomicBehavior2[AtomicBehavior2["Lock"] = 0] = "Lock";
@@ -23532,8 +23460,12 @@ async function copyFileViaIndex(prelayout, postlayout, destinationFs, destinatio
     }
   });
   postlayout.push(async () => {
-    if (!indexStat)
+    if (!indexStat) {
       await destinationFs.lutimesPromise(indexPath, defaultTime, defaultTime);
+      if (sourceMode !== defaultMode) {
+        await destinationFs.chmodPromise(indexPath, sourceMode);
+      }
+    }
     if (tempPath && !tempPathCleaned) {
       await destinationFs.unlinkPromise(tempPath);
     }
@@ -24335,6 +24267,12 @@ class ProxiedFS extends FakeFS {
   rmdirSync(p, opts) {
     return this.baseFs.rmdirSync(this.mapToBase(p), opts);
   }
+  async rmPromise(p, opts) {
+    return this.baseFs.rmPromise(this.mapToBase(p), opts);
+  }
+  rmSync(p, opts) {
+    return this.baseFs.rmSync(this.mapToBase(p), opts);
+  }
   async linkPromise(existingP, newP) {
     return this.baseFs.linkPromise(this.mapToBase(existingP), this.mapToBase(newP));
   }
@@ -24715,6 +24653,18 @@ class NodeFS extends BasePortableFakeFS {
   }
   rmdirSync(p, opts) {
     return this.realFs.rmdirSync(npath.fromPortablePath(p), opts);
+  }
+  async rmPromise(p, opts) {
+    return await new Promise((resolve, reject) => {
+      if (opts) {
+        this.realFs.rm(npath.fromPortablePath(p), opts, this.makeCallback(resolve, reject));
+      } else {
+        this.realFs.rm(npath.fromPortablePath(p), this.makeCallback(resolve, reject));
+      }
+    });
+  }
+  rmSync(p, opts) {
+    return this.realFs.rmSync(npath.fromPortablePath(p), opts);
   }
   async linkPromise(existingP, newP) {
     return await new Promise((resolve, reject) => {
@@ -25371,6 +25321,20 @@ class MountFS extends BasePortableFakeFS {
       return mountFs.rmdirSync(subPath, opts);
     });
   }
+  async rmPromise(p, opts) {
+    return await this.makeCallPromise(p, async () => {
+      return await this.baseFs.rmPromise(p, opts);
+    }, async (mountFs, { subPath }) => {
+      return await mountFs.rmPromise(subPath, opts);
+    });
+  }
+  rmSync(p, opts) {
+    return this.makeCallSync(p, () => {
+      return this.baseFs.rmSync(p, opts);
+    }, (mountFs, { subPath }) => {
+      return mountFs.rmSync(subPath, opts);
+    });
+  }
   async linkPromise(existingP, newP) {
     return await this.makeCallPromise(newP, async () => {
       return await this.baseFs.linkPromise(existingP, newP);
@@ -25737,6 +25701,8 @@ class VirtualFS extends ProxiedFS {
   }
 }
 
+const URL = Number(process.versions.node.split('.', 1)[0]) < 20 ? url.URL : globalThis.URL;
+
 class NodePathFS extends ProxiedFS {
   constructor(baseFs) {
     super(npath);
@@ -25748,7 +25714,7 @@ class NodePathFS extends ProxiedFS {
   mapToBase(path) {
     if (typeof path === `string`)
       return path;
-    if (path instanceof url.URL)
+    if (path instanceof URL)
       return url.fileURLToPath(path);
     if (Buffer.isBuffer(path)) {
       const str = path.toString();
@@ -26007,6 +25973,7 @@ const SYNC_IMPLEMENTATIONS = /* @__PURE__ */ new Set([
   `realpathSync`,
   `renameSync`,
   `rmdirSync`,
+  `rmSync`,
   `statSync`,
   `symlinkSync`,
   `truncateSync`,
@@ -26042,6 +26009,7 @@ const ASYNC_IMPLEMENTATIONS = /* @__PURE__ */ new Set([
   `readlinkPromise`,
   `renamePromise`,
   `rmdirPromise`,
+  `rmPromise`,
   `statPromise`,
   `symlinkPromise`,
   `truncatePromise`,
@@ -27314,8 +27282,10 @@ class ZipFS extends BasePortableFakeFS {
           throw new Error(`Incomplete read`);
         else if (rc > size)
           throw new Error(`Overread`);
-        const memory = this.libzip.HEAPU8.subarray(buffer, buffer + size);
-        return Buffer.from(memory);
+        let result = Buffer.from(this.libzip.HEAPU8.subarray(buffer, buffer + size));
+        if (process.env.YARN_IS_TEST_ENV && process.env.YARN_ZIP_DATA_EPILOGUE)
+          result = Buffer.concat([result, Buffer.from(process.env.YARN_ZIP_DATA_EPILOGUE)]);
+        return result;
       } finally {
         this.libzip.free(buffer);
       }
@@ -28065,6 +28035,27 @@ class ZipFS extends BasePortableFakeFS {
       throw EINVAL(`rmdir '${p}'`);
     this.deleteEntry(p, index);
   }
+  async rmPromise(p, opts) {
+    return this.rmSync(p, opts);
+  }
+  rmSync(p, { recursive = false } = {}) {
+    if (this.readOnly)
+      throw EROFS(`rm '${p}'`);
+    if (recursive) {
+      this.removeSync(p);
+      return;
+    }
+    const resolvedP = this.resolveFilename(`rm '${p}'`, p);
+    const directoryListing = this.listings.get(resolvedP);
+    if (!directoryListing)
+      throw ENOTDIR(`rm '${p}'`);
+    if (directoryListing.size > 0)
+      throw ENOTEMPTY(`rm '${p}'`);
+    const index = this.entries.get(resolvedP);
+    if (typeof index === `undefined`)
+      throw EINVAL(`rm '${p}'`);
+    this.deleteEntry(p, index);
+  }
   hydrateDirectory(resolvedP) {
     const index = this.libzip.dir.add(this.zip, ppath.relative(PortablePath.root, resolvedP));
     if (index === -1)
@@ -28373,7 +28364,7 @@ function applyPatch(pnpapi, opts) {
   process.versions.pnp = String(pnpapi.VERSIONS.std);
   const moduleExports = require$$0__default.default;
   moduleExports.findPnpApi = (lookupSource) => {
-    const lookupPath = lookupSource instanceof url.URL ? url.fileURLToPath(lookupSource) : lookupSource;
+    const lookupPath = lookupSource instanceof URL ? url.fileURLToPath(lookupSource) : lookupSource;
     const apiPath = opts.manager.findApiPathFor(lookupPath);
     if (apiPath === null)
       return null;
@@ -28795,28 +28786,6 @@ function getPackageScopeConfig(resolved, readFileSyncFn) {
   return packageConfig;
 }
 
-/**
-  @license
-  Copyright Node.js contributors. All rights reserved.
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
-*/
 function throwImportNotDefined(specifier, packageJSONUrl, base) {
   throw new ERR_PACKAGE_IMPORT_NOT_DEFINED(
     specifier,
