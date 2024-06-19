@@ -205,9 +205,6 @@ jobs:
         run: nohup poetry run python -m operationsgateway_api.src.main > api-output.txt &
         working-directory: ./operationsgateway-api
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-
       - uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8 # v4
         with:
           node-version: 20
@@ -215,6 +212,9 @@ jobs:
 
       - name: Install dependencies
         run: yarn --immutable
+
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
 
       - name: Run playwright tests
         run: yarn playwright:test:real
