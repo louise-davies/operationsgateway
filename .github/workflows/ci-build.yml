@@ -83,8 +83,6 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
-        with:
-          path: operationsgateway
 
       - name: Checkout OperationsGateway API
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
@@ -121,13 +119,13 @@ jobs:
 
        # Configure correct paths in config files
       - name: Configure private key path
-        run: yq -i ".auth.private_key_path = \"/home/runner/work/operationsgateway/id_rsa\"" .github/ci_config.yml
+        run: yq -i ".auth.private_key_path = \"$GITHUB_WORKSPACE/id_rsa\"" .github/ci_config.yml
         working-directory: ./operationsgateway-api
       - name: Configure public key path
-        run: yq -i ".auth.public_key_path = \"/home/runner/work/operationsgateway/id_rsa.pub\"" .github/ci_config.yml
+        run: yq -i ".auth.public_key_path = \"$GITHUB_WORKSPACE/id_rsa.pub\"" .github/ci_config.yml
         working-directory: ./operationsgateway-api
       - name: Configure log config path
-        run: yq -i ".api.log_config_path = \"/home/runner/work/operationsgateway/operationsgateway-api/operationsgateway_api/logging.ini\"" .github/ci_ingest_echo_config.yml
+        run: yq -i ".api.log_config_path = \"$GITHUB_WORKSPACE/operationsgateway-api/operationsgateway_api/logging.ini\"" .github/ci_ingest_echo_config.yml
         working-directory: ./operationsgateway-api
 
       # Read the database name from the config file and store it in an environment variable
@@ -170,16 +168,16 @@ jobs:
         working-directory: ./operationsgateway-api
 
       - name: Create SSH private key file for auth
-        run: 'echo "$SSH_KEY_PRIVATE" > /home/runner/work/operationsgateway/id_rsa'
+        run: 'echo "$SSH_KEY_PRIVATE" > $GITHUB_WORKSPACE/id_rsa'
         shell: bash
         env:
           SSH_KEY_PRIVATE: ${{secrets.SSH_PRIVATE_KEY_FOR_AUTH_OPENSSH}}
 
       - name: Set permissions on private key file
-        run: chmod 600 /home/runner/work/operationsgateway/id_rsa
+        run: chmod 600 $GITHUB_WORKSPACE/id_rsa
 
       - name: Create SSH public key file for auth
-        run: 'echo "$SSH_KEY_PUBLIC" > /home/runner/work/operationsgateway/id_rsa.pub'
+        run: 'echo "$SSH_KEY_PUBLIC" > $GITHUB_WORKSPACE/id_rsa.pub'
         shell: bash
         env:
           SSH_KEY_PUBLIC: ${{secrets.SSH_PUBLIC_KEY_FOR_AUTH_OPENSSH}}
