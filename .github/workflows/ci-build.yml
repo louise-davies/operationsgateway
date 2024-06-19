@@ -75,7 +75,7 @@ jobs:
         uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4
         if: always()
         with:
-          name: playwright-report
+          name: playwright-report-mocked-tests
           path: playwright-report/
           retention-days: 10
   playwright-tests-real:
@@ -216,9 +216,6 @@ jobs:
       - name: Install dependencies
         run: yarn --immutable
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-
       - name: Run playwright tests
         run: yarn playwright:test:real
 
@@ -226,6 +223,6 @@ jobs:
         uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4
         if: always()
         with:
-          name: playwright-report
+          name: playwright-report-real-tests
           path: playwright-report/
           retention-days: 10
