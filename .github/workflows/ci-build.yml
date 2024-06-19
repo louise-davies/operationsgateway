@@ -197,6 +197,9 @@ jobs:
         run: cp .github/ci_ingest_echo_config.yml util/realistic_data/config.yml
         working-directory: ./operationsgateway-api
 
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+
       - name: Run Echo Ingest script
         run: poetry run python util/realistic_data/ingest_echo_data.py
         working-directory: ./operationsgateway-api
