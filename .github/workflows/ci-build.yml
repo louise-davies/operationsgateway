@@ -124,6 +124,9 @@ jobs:
       - name: Configure public key path
         run: yq -i ".auth.public_key_path = \"$GITHUB_WORKSPACE/id_rsa.pub\"" .github/ci_config.yml
         working-directory: ./operationsgateway-api
+      - name: Configure api host
+        run: yq -i ".app.host = \"0.0.0.0\"" .github/ci_config.yml
+        working-directory: ./operationsgateway-api
       - name: Configure log config path
         run: yq -i ".api.log_config_path = \"$GITHUB_WORKSPACE/operationsgateway-api/operationsgateway_api/logging.ini\"" .github/ci_ingest_echo_config.yml
         working-directory: ./operationsgateway-api
