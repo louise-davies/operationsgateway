@@ -1,28 +1,40 @@
 # Dockerfile to build and serve OperationsGateway
 
 # Build stage
-FROM node:20.12.0-alpine3.19@sha256:ef3f47741e161900ddd07addcaca7e76534a9205e4cd73b2ed091ba339004a75 as builder
+FROM node:20.17.0-alpine3.20@sha256:2d07db07a2df6830718ae2a47db6fedce6745f5bcd174c398f2acdda90a11c03 as builder
 
 WORKDIR /operationsgateway-build
+
+# Enable dependency caching and share the cache between projects
+ENV YARN_ENABLE_GLOBAL_CACHE=true
+ENV YARN_GLOBAL_FOLDER=/root/.cache/.yarn
+
+COPY package.json tsconfig.json yarn.lock .yarnrc.yml ./
+COPY .yarn .yarn
+COPY public public
+
+RUN --mount=type=cache,target=/root/.cache/.yarn/cache \
+    set -eux; \
+    \
+    yarn workspaces focus --production;
 
 COPY . .
 
 RUN set -eux; \
     \
     # Set the React production variable which holds reference to the path of the plugin build \
-    sed -i "s#REACT_APP_OPERATIONSGATEWAY_BUILD_DIRECTORY=.*#REACT_APP_OPERATIONSGATEWAY_BUILD_DIRECTORY=/operationsgateway/#" .env.production; \
+    sed -i "s#VITE_APP_OPERATIONS_GATEWAY_BUILD_DIRECTORY=.*#VITE_APP_OPERATIONS_GATEWAY_BUILD_DIRECTORY=/operationsgateway/#" .env.production; \
     \
     cp public/operationsgateway-settings.example.json public/operationsgateway-settings.json; \
     \
-    # Note yarn rebuild - this is to let yarn rebuild binaries
-    yarn rebuild && yarn build;
+    yarn build;
 
 # Run stage
-FROM httpd:2.4.58-alpine3.19@sha256:92535cf7f151901ba91b04186292c3bd5bf82aa6ffa6eb7bc405fefbffedd480
+FROM httpd:2.4.62-alpine3.20@sha256:66c49302c02430619abb84240a438bcfc083015661009fcaaeaac931450f62cd
 
 WORKDIR /usr/local/apache2/htdocs
 
-COPY --from=builder /operationsgateway-build/build/. ./operationsgateway/
+COPY --from=builder /operationsgateway-build/dist/. ./operationsgateway/
 
 RUN set -eux; \
     \
