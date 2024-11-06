@@ -29,3 +29,5 @@ README.md
 .env.development.local
 .env.test.local
 .env.production.local
+**/public/*settings*.json
+!**/public/*settings.example.json

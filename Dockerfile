@@ -25,8 +25,6 @@ RUN set -eux; \
     # Set the React production variable which holds reference to the path of the plugin build \
     sed -i "s#VITE_APP_OPERATIONS_GATEWAY_BUILD_DIRECTORY=.*#VITE_APP_OPERATIONS_GATEWAY_BUILD_DIRECTORY=/operationsgateway/#" .env.production; \
     \
-    cp public/operationsgateway-settings.example.json public/operationsgateway-settings.json; \
-    \
     yarn build;
 
 # Run stage
@@ -56,8 +54,8 @@ RUN set -eux; \
     # Change ownership of logs directory \
     chown www-data:www-data /usr/local/apache2/logs; \
     \
-    # Change ownership of settings file \
-    chown www-data:www-data /usr/local/apache2/htdocs/operationsgateway/operationsgateway-settings.json;
+    # Change ownership of settings location \
+    chown www-data:www-data -R /usr/local/apache2/htdocs/operationsgateway;
 
 # Switch to non-root user defined in httpd image
 USER www-data
